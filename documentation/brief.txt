@@ -1,0 +1,5 @@
+Basic synthesizer on stm32.
+Current modules: 
+	oscillator(WIP, currently 2 sawtooth oscs, 1 is 1 octave lower than the other)
+	encoder(basic encoder driver, controls frequency, WIP)
+	USART interface(WIP, will be used to control all synth parameters via terminal)
