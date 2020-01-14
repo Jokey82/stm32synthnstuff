@@ -1,5 +1,5 @@
 #include "main.h"
-
+//GPIO PORT GPIOC
 #define LED_1 GPIO_Pin_4
 #define LED_2 GPIO_Pin_5
 #define LED_3 GPIO_Pin_6

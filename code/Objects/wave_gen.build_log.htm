@@ -22,37 +22,35 @@ Dialog DLL:      TCM.DLL V1.36.2.0
  
 <h2>Project:</h2>
 D:\support_data\embedded\stm32_audio_proj\code\wave_gen.uvprojx
-Project File Date:  01/13/2020
+Project File Date:  01/14/2020
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'stm32'
-compiling main.c...
+compiling usart.c...
 main.h(4): warning:  #1-D: last line of file ends without a newline
   #include "stdio.h"
-main.h(4): warning:  #1-D: last line of file ends without a newline
-  #include "stdio.h"
-led.h(15): warning:  #1-D: last line of file ends without a newline
-  void run_demo(void);
-main.h(4): warning:  #1-D: last line of file ends without a newline
-  #include "stdio.h"
-main.h(4): warning:  #1-D: last line of file ends without a newline
-  #include "stdio.h"
-main.h(4): warning:  #1-D: last line of file ends without a newline
-  #include "stdio.h"
-saw_osc.h(9): warning:  #1-D: last line of file ends without a newline
-  void init_osc(void);
-main.h(4): warning:  #1-D: last line of file ends without a newline
-  #include "stdio.h"
-usart.h(6): warning:  #1-D: last line of file ends without a newline
-  void init_uart(void);
 common.h(4): warning:  #1-D: last line of file ends without a newline
-   void reverse(char s[]);
-main.c: 10 warnings, 0 errors
+  void reverse(char s[]);
+commands.h(8): warning:  #1-D: last line of file ends without a newline
+  #define GREET 8
+usart.h(15): warning:  #1-D: last line of file ends without a newline
+  	
+usart.c(71): warning:  #167-D: argument of type "volatile char *" is incompatible with parameter of type "char *"
+              send_str(RXs);
+usart.c(74): warning:  #167-D: argument of type "volatile char *" is incompatible with parameter of type "const char *"
+              if (strncmp(RXs, "ON1\r", 4) == 0) {
+usart.c(77): warning:  #167-D: argument of type "volatile char *" is incompatible with parameter of type "const char *"
+  						if (strncmp(RXs, "ON2\r", 4) == 0) {
+usart.c(80): warning:  #167-D: argument of type "volatile char *" is incompatible with parameter of type "const char *"
+  						if (strncmp(RXs, "ON3\r", 4) == 0) {
+usart.c(83): warning:  #167-D: argument of type "volatile char *" is incompatible with parameter of type "const char *"
+  						if (strncmp(RXs, "ON4\r", 4) == 0) {
+usart.c: 9 warnings, 0 errors
 linking...
-Program Size: Code=3228 RO-data=320 RW-data=28 ZI-data=2116  
+Program Size: Code=2728 RO-data=320 RW-data=48 ZI-data=2136  
 FromELF: creating hex file...
-".\Objects\wave_gen.axf" - 0 Error(s), 10 Warning(s).
+".\Objects\wave_gen.axf" - 0 Error(s), 9 Warning(s).
 
 <h2>Software Packages used:</h2>
 

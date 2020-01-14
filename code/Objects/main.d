@@ -28,3 +28,6 @@
 .\objects\main.o: main.h
 .\objects\main.o: common.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\main.o: commands.h
+.\objects\main.o: common.h
+.\objects\main.o: commands.h

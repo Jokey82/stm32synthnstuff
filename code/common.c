@@ -1,5 +1,4 @@
 #include "common.h"
-
 void reverse(char s[])
  {
      int i, j;

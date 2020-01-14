@@ -23,7 +23,7 @@ void init_enc_timer(uint16_t prescaler, uint16_t period){
 }
 
 void enable_irq(TIM_TypeDef * timer, uint8_t IRQN_Channel){
-	TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
+	TIM_ITConfig(timer, TIM_IT_Update, ENABLE);
 	
 	NVIC_InitTypeDef nvicStructure;
 	nvicStructure.NVIC_IRQChannel = IRQN_Channel;
