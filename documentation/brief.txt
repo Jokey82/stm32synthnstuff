@@ -1,4 +1,4 @@
-Basic synthesizer on stm32.
+Basic synthesizer based on stm32 mcu.
 Current modules: 
 	oscillator(WIP, currently 2 sawtooth oscs, 1 is 1 octave lower than the other)
 	encoder(basic encoder driver, controls frequency, WIP)
