@@ -10,6 +10,6 @@
 void send_to_uart(uint8_t data);
 void send_str(char * string);
 void init_uart(void);
-uint8_t usart_main_loop_routine(void);
+uint16_t usart_main_loop_routine(void);
 
 	

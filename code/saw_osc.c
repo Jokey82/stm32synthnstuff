@@ -65,3 +65,12 @@ void set_freq(uint16_t freq){
 		TIM7->ARR = freq+1000;
 	}
 }
+
+void stop_osc(void){
+		TIM6->CR1 &= (~((u16)TIM_CR1_CEN));
+		TIM7->CR1 &= (~((u16)TIM_CR1_CEN));
+		TIM6->CNT = 0;
+		TIM7->CNT = 0;
+		TIM6->SR = (u16)~TIM_FLAG_Update;
+		TIM7->SR = (u16)~TIM_FLAG_Update;
+}

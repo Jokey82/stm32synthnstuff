@@ -11,7 +11,7 @@ int main(void)
 {
 	/*INIT CONFIGURATION*/
 	
-	//init_osc();
+	init_osc();
 	//encoder_init();
 	
 	init_led();
@@ -22,12 +22,15 @@ int main(void)
 	
 	/*VARIABLE INITIALISATION*/	
 	
-	uint8_t command;
+	uint16_t command;
+	char aux_buffer[32];
 	
 	while(1){
 		
 		command = usart_main_loop_routine();
 		switch (command){
+			case 0:
+				break;
 			case LED1_ON:
 				led_excl_on(LED_1);
 				break;
@@ -40,6 +43,21 @@ int main(void)
 			case LED4_ON:
 				led_excl_on(LED_4);
 				break;
+			case DEMO:
+				init_apb1_timer(RCC_APB1Periph_TIM4, TIM4, 24000, 100);
+				enable_irq(TIM4, TIM4_IRQn);
+				break;
+			case STOP:
+				TIM_Cmd(TIM4, DISABLE);
+				break;
+			case INVAL:
+				send_str("Invalid frequency value");
+				break;
+			default:
+				
+				set_freq(command);
+			snprintf(aux_buffer, 32, "Freq. set to %d", command);
+			send_str(aux_buffer);
 		}
 		
 	}
@@ -60,6 +78,14 @@ void TIM3_IRQHandler(void){
 		//set_freq(MAX_FRQ / get_enc_count());
 		
 
+	}
+}
+
+void TIM4_IRQHandler(void){
+		if (TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET)
+				{
+					TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
+					run_demo();
 	}
 }
 

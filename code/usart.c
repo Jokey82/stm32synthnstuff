@@ -62,27 +62,25 @@ void init_uart(void){
 		USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
 }
 
-uint8_t usart_main_loop_routine(void){
+uint16_t usart_main_loop_routine(void){
 	if (RX_FLAG_END_LINE == 1) {
-						uint8_t command = 0;
+						uint16_t command = 0;
             RX_FLAG_END_LINE = 0;
 		
             send_str("Received a line:");
             send_str(RXs);
-						
-						
-            if (strncmp(RXs, "ON1\r", 4) == 0) {
-								command = LED1_ON;
-            }
-						if (strncmp(RXs, "ON2\r", 4) == 0) {
-								command = LED2_ON;
-            }
-						if (strncmp(RXs, "ON3\r", 4) == 0) {
-								command = LED3_ON;
-            }
-						if (strncmp(RXs, "ON4\r", 4) == 0) {
-								command = LED4_ON;
-            }
+						if ((command = led_command_check(RXs)) != 0){
+							clear_RXBuffer();
+							return command;
+						}
+						if((command = osc_command_check(RXs)) >= 50){  //IF COMMAND IS SETTING FREQUENCY
+							clear_RXBuffer();
+							return command;
+						}
+						else if (command == INVAL){
+							clear_RXBuffer();
+							return command;
+						}
             clear_RXBuffer();
 						return command;
         }

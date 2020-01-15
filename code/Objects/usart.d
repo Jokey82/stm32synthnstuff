@@ -20,3 +20,5 @@
 .\objects\usart.o: common.h
 .\objects\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\usart.o: commands.h
+.\objects\usart.o: main.h
+.\objects\usart.o: common.h

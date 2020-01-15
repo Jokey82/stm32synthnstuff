@@ -25,3 +25,18 @@ void reverse(char s[])
      s[i] = '\0';
      reverse(s);
  }
+ 
+ 
+uint16_t extract_int(char* RXs)
+{
+        int i, val, n;
+        for(i = val =0, n = strlen(RXs);i<n;i++){
+                if(RXs[i] >='0' && RXs[i]<='9'){
+                        val = val * 10 + RXs[i] - '0';
+                }
+        }
+				if(val == 0){
+					return 0;
+				}
+				return val;
+}
