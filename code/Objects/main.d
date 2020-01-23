@@ -24,6 +24,7 @@
 .\objects\main.o: main.h
 .\objects\main.o: saw_osc.h
 .\objects\main.o: main.h
+.\objects\main.o: dma.h
 .\objects\main.o: usart.h
 .\objects\main.o: main.h
 .\objects\main.o: common.h
@@ -35,3 +36,4 @@
 .\objects\main.o: commands.h
 .\objects\main.o: main.h
 .\objects\main.o: common.h
+.\objects\main.o: dma.h

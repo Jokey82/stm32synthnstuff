@@ -1,5 +1,6 @@
 #include "main.h"
-#define BUF_LEN 32
+#include "dma.h"
+#define BUF_LEN MAX_AMP / 10
 
 
 void set_freq(uint16_t freq);

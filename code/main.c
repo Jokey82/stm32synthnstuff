@@ -6,13 +6,13 @@
 #include "usart.h"
 #include "common.h"
 #include "commands.h"
+#include "dma.h"
 
-int main(void)
-{
+int main(void){
 	/*INIT CONFIGURATION*/
 	
 	init_osc();
-	//encoder_init();
+	encoder_init();
 	
 	init_led();
 	init_uart();
@@ -74,8 +74,8 @@ void TIM3_IRQHandler(void){
 					//int pos = get_enc_count();
 					
 					//snprintf(buffer, 64, "Encoder position: %d", pos);
-					send_str("TEST");
-		//set_freq(MAX_FRQ / get_enc_count());
+					//send_str("TEST");
+		set_freq(MAX_FRQ / get_enc_count());
 		
 
 	}
@@ -88,4 +88,5 @@ void TIM4_IRQHandler(void){
 					run_demo();
 	}
 }
+
 

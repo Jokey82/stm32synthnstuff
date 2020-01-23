@@ -4,5 +4,5 @@
 #include "stdio.h"
 
 
-#define MAX_AMP 4000
+#define MAX_AMP 2000
 #define MAX_FRQ 5000

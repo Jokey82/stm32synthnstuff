@@ -73,7 +73,7 @@ uint16_t usart_main_loop_routine(void){
 							clear_RXBuffer();
 							return command;
 						}
-						if((command = osc_command_check(RXs)) >= 50){  //IF COMMAND IS SETTING FREQUENCY
+						if((command = osc_command_check(RXs)) >= 50){  
 							clear_RXBuffer();
 							return command;
 						}
@@ -82,7 +82,6 @@ uint16_t usart_main_loop_routine(void){
 							return command;
 						}
             clear_RXBuffer();
-						return command;
         }
 	return 0;
 }
